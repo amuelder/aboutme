@@ -24,15 +24,17 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             position: relative;
+            margin: 20px auto; /* Center align container */
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         .profile-image {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            margin-bottom: 20px;
+            float: right; /* Float the image to the right */
+            margin-left: 20px; /* Space between the image and the text */
         }
         h1 {
             font-size: 2.5em;
@@ -71,7 +73,12 @@
 
         /* Mobile responsiveness */
         @media (max-width: 600px) {
+            body {
+                overflow: hidden; /* Prevent body from scrolling */
+            }
             .container {
+                max-height: 100vh; /* Full viewport height */
+                overflow-y: auto; /* Enable vertical scrolling */
                 padding: 20px;
                 margin: 10px;
             }
@@ -81,10 +88,11 @@
                 margin-bottom: 10px;
             }
             h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
             .subtitle {
-                font-size: 1.2em;
+                font-size: 1em;
+	        font-weight: normal;
                 margin: 15px 0 5px;
             }
             .tagline {
@@ -94,6 +102,37 @@
             p {
                 font-size: 1em;
                 margin-bottom: 15px;
+            }
+            .social-links img {
+                height: 22px;
+            }
+        }
+
+        /* Landscape mode */
+        @media (max-width: 800px) and (orientation: landscape) {
+            .container {
+                padding: 10px;
+                max-height: 90vh; /* Slightly less than full viewport height */
+                overflow-y: auto; /* Enable vertical scrolling */
+                margin: 20px auto;
+            }
+            .profile-image {
+                width: 80px;
+                height: 80px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .subtitle {
+                font-size: 1.2em;
+                margin: 10px 0 5px;
+            }
+            .tagline {
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 1em;
             }
             .social-links img {
                 height: 25px;
